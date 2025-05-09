@@ -1,0 +1,30 @@
+:root {
+    --color-dark: #15161B;
+    --color-light: #D3D8E1;
+    --color-yellow: #FFC700;
+
+    --font-xs: 1rem;
+    --font-sm: 2rem;
+    --font-md: 3rem;
+    --font-lg: 4rem;
+    --font-xl: 5rem;
+    --font-diff: 8rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PP Neue Montreal Book';
+}
+
+html,
+body {
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+main {
+    position: relative;
+}
