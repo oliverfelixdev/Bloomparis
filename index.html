@@ -1,66 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BLOOM Paris - Replica by Oliver Felix</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/utils.css" />
     <link rel="stylesheet" href="./css/about.css" />
-</head>
+    <link rel="stylesheet" href="./css/videoplayer.css" />
+  </head>
 
-<body>
+  <body>
     <main>
-        <header>
-            <div class="header-content">
-                <div class="hero-balls">
-                    <div class="ball ball1"></div>
-                    <div class="ball ball2"></div>
-                </div>
-                <div class="hero-content">
-                    <div class="interection hero-interection">
-                        <span>48°51'10.9"N</span>
-                    </div>
-                    <div class="hero-title-and-container">
-                        <h1 class="hero-title title-xl">
-                            FULL PRODUCTION<br />
-                            SERVICES BASED<br />
-                            IN PARIS
-                        </h1>
-
-                        <button class="btn-def">
-                            <a href="#">
-                                <div class="playthereel interection btn-def-text">
-                                    PLAY THE REEL
-                                </div>
-                            </a>
-                        </button>
-                    </div>
-                    <div class="interection hero-interection">
-                        <span>2°23'25.2"E</span>
-                    </div>
-                </div>
-                <nav class="navbar">
-                    <a href="index.html">
-                        <img src="./assets/images/bloom.svg" alt="logo not found" />
-                    </a>
-                    <ul class="nav-link-container">
-                        <li class="nav-link"><a href="#">Work</a></li>
-                        <li class="nav-link"><a href="#">Services</a></li>
-                        <li class="nav-link"><a href="#">About</a></li>
-                        <li class="nav-link"><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
+      <header>
+        <div class="header-content">
+          <div class="hero-balls">
+            <div class="ball ball1"></div>
+            <div class="ball ball2"></div>
+          </div>
+          <div class="hero-content">
+            <div class="interection hero-interection">
+              <span>48°51'10.9"N</span>
             </div>
-            <!-- <video class="header-video-preview" loop autoplay muted src="./assets/videos/videopreview.mp4"></video> -->
-        </header>
+            <div class="hero-title-and-container">
+              <h1 class="hero-title title-xl">
+                FULL PRODUCTION<br />
+                SERVICES BASED<br />
+                IN PARIS
+              </h1>
+              <button class="btn-svg" onclick="openModal()">
+                <div>
+                  <svg
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="7"
+                    height="9"
+                    viewBox="0 0 7 9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.99609 4.75526L0.979222 0.510498L0.979221 9L6.99609 4.75526Z"
+                      fill="#ffc700"
+                    ></path>
+                  </svg>
+                </div>
+                <span class="interection"> PLAY THE REEL </span>
+                <div>
+                  <svg
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="10"
+                    height="9"
+                    viewBox="0 0 10 9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.37501 7.58333C7.45834 8.30555 6.29167 8.66667 4.875 8.66667C3.45833 8.66667 2.29167 8.30555 1.37501 7.58333C0.458342 6.83333 0 5.75 0 4.33333C0 2.91667 0.458342 1.84722 1.37501 1.125C2.29167 0.375001 3.45833 0 4.875 0C6.29167 0 7.45834 0.375001 8.37501 1.125C9.29168 1.84722 9.75 2.91667 9.75 4.33333C9.75 5.75 9.29168 6.83333 8.37501 7.58333Z"
+                      fill="#ffc700"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="interection hero-interection">
+              <span>2°23'25.2"E</span>
+            </div>
+          </div>
+          <nav class="navbar">
+            <a href="index.html">
+              <img src="./assets/images/bloom.svg" alt="logo not found" />
+            </a>
+            <ul class="nav-link-container">
+              <li class="js-link-item link-item">
+                <a class="nav-link">
+                  <div class="link-item__text">WORK</div>
+                </a>
+              </li>
+              <li class="js-link-item link-item">
+                <a class="nav-link">
+                  <div class="link-item__text">Services</div>
+                </a>
+              </li>
+              <li class="js-link-item link-item">
+                <a class="nav-link" href="./pages/about.html">
+                  <div class="link-item__text">About</div>
+                </a>
+              </li>
+              <li class="js-link-item link-item">
+                <a class="nav-link">
+                  <div class="link-item__text">Contact</div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <video
+          class="header-video-preview"
+          loop
+          autoplay
+          muted
+          src="./assets/videos/videopreview.mp4"
+          poster="./assets/images/videopreviewposter.webp"
+        ></video>
+        <div id="videoModal">
+          <div class="video-container">
+            <video id="myVideo" src="./assets/videos/videomain.mp4"></video>
+            <div class="progress-bar" id="progressBar"></div>
+
+            <button class="btn-def close-btn" onclick="closeModal()">
+              CLOSE
+            </button>
+
+            <div class="controls">
+              <button id="playPauseBtn" onclick="togglePlay()">PLAY</button>
+              <span class="time" id="timeDisplay">0:00 / 0:00</span>
+            </div>
+            <div class="right-controls">
+              <button id="muteBtn" onclick="toggleMute()">SOUND ON</button>
+              <button onclick="toggleFullscreen()">FULL SCREEN</button>
+            </div>
+          </div>
+        </div>
+      </header>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="./js/script.js"></script>
-</body>
-
+    <script src="./js/videoplayer.js"></script>
+  </body>
 </html>

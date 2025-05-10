@@ -1,75 +1,126 @@
 @font-face {
-    font-family: 'PP Neue Montreal Book';
-    font-style: normal;
-    font-weight: normal;
-    src: local('PP Neue Montreal Book'), url('../assets/fonts/ppneuemontreal-book.woff') format('woff');
+  font-family: "PP Neue Montreal Book";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PP Neue Montreal Book"),
+    url("../assets/fonts/ppneuemontreal-book.woff") format("woff");
 }
 
 @font-face {
-    font-family: 'PP Neue Montreal Italic';
-    font-style: normal;
-    font-weight: normal;
-    src: local('PP Neue Montreal Italic'), url('../assets/fonts/ppneuemontreal-italic.woff') format('woff');
+  font-family: "PP Neue Montreal Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PP Neue Montreal Italic"),
+    url("../assets/fonts/ppneuemontreal-italic.woff") format("woff");
 }
 
 @font-face {
-    font-family: 'PP Neue Montreal Thin';
-    font-style: normal;
-    font-weight: normal;
-    src: local('PP Neue Montreal Thin'), url('../assets/fonts/') format('woff');
+  font-family: "PP Neue Montreal Thin";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PP Neue Montreal Thin"), url("../assets/fonts/") format("woff");
 }
 
 @font-face {
-    font-family: 'PP Neue Montreal Medium';
-    font-style: normal;
-    font-weight: normal;
-    src: local('PP Neue Montreal Medium'), url('../assets/fonts/ppneuemontreal-medium.woff') format('woff');
+  font-family: "PP Neue Montreal Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PP Neue Montreal Medium"),
+    url("../assets/fonts/ppneuemontreal-medium.woff") format("woff");
 }
 
 @font-face {
-    font-family: 'PP Neue Montreal SemiBold italic';
-    font-style: normal;
-    font-weight: normal;
-    src: local('PP Neue Montreal SemiBold italic'), url('../assets/fonts/ppneuemontreal-semibolditalic.woff') format('woff');
+  font-family: "PP Neue Montreal SemiBold italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PP Neue Montreal SemiBold italic"),
+    url("../assets/fonts/ppneuemontreal-semibolditalic.woff") format("woff");
 }
 
 @font-face {
-    font-family: 'PP Neue Montreal Bold';
-    font-style: normal;
-    font-weight: normal;
-    src: local('PP Neue Montreal Bold'), url('../assets/fonts/ppneuemontreal-bold.woff') format('woff');
+  font-family: "PP Neue Montreal Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PP Neue Montreal Bold"),
+    url("../assets/fonts/ppneuemontreal-bold.woff") format("woff");
 }
 
 *::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .interection {
-    font-size: var(--font-xs);
+  font-size: var(--font-xs);
 }
 
 .title-xl {
-    font-size: var(--font-xl);
-    font-family: var(--font-bold);
-    line-height: .82;
-    text-align: center;
+  font-size: var(--font-xl);
+  font-family: var(--font-bold);
+  line-height: 0.82;
+  text-align: center;
 }
 
 /* button defult style at utils.css */
+/* .hero-content  */
 .btn-def {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.btn-def>a {
-    overflow: hidden;
-    display: block;
+.btn-def > a {
+  overflow: hidden;
+  display: block;
 }
 
-.btn-def-text>span {
-    display: inline-block;
+.btn-def-text > span {
+  display: inline-block;
+}
+
+/* SVG Button style at utils.css */
+.btn-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-svg > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.btn-svg div:first-child {
+  transform: scale(1);
+}
+
+.btn-svg div:last-child {
+  transform: scale(0);
+}
+
+.btn-svg:hover div:first-child {
+  transform: scale(0);
+}
+
+.btn-svg:hover div:last-child {
+  transform: scale(1) translateX(-5px);
+}
+
+.btn-svg span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn-svg:hover span {
+  transform: translateX(-5px);
 }

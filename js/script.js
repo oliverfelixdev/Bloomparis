@@ -27,18 +27,18 @@ let buttonHover = () => {
 
   const animation = function (menuItem) {
     gsap.defaults({
-      ease: "expo.out",
+      ease: Expo.easeInOut,
       stagger: {
-        from: "11",
-        amount: 0.35,
+        amount: 0.11,
+        from: "start",
       },
     });
     menuItem.addEventListener("mouseover", function () {
       gsap.to(this.children[0].children[0].children, {
-        y: "-100%",
+        y: "-150%",
       });
       gsap.to(this.children[0].children[1].children, {
-        y: "-100%",
+        y: "-150%",
       });
     });
 
@@ -52,7 +52,7 @@ let buttonHover = () => {
     });
   };
 
-  const targetItems = document.querySelectorAll(".btn-def");
+  const targetItems = document.querySelectorAll(".js-link-item");
 
   targetItems.forEach((targetItem) => {
     const menuItem = targetItem;
